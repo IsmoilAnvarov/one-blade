@@ -439,6 +439,21 @@ label {
   }
 }
 
+.slider-animation {
+  opacity: 0 !important;
+  transform: translateX(100%) translateZ(0) !important;
+}
+
+.left {
+  opacity: 0 !important;
+  transform: translateX(-100%) translateZ(0) !important;
+}
+
+.slider-active {
+  opacity: 1 !important;
+  transform: translateX(0%) translateZ(0) !important;
+}
+
 .header {
   background-color: #000;
   position: -webkit-sticky;
@@ -646,7 +661,15 @@ label {
       object-fit: cover;
       object-position: center;
       height: 800px;
+      width: 930px;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+      transform: translate3d(50px, 0, 0) scale3d(1.3, 1.3, 1);
+      transform-style: preserve-3d;
+      transition: transform 4s cubic-bezier(0, 0, 0, 1) 0s;
       width: 100%;
+      will-change: transform;
     }
   }
 }
